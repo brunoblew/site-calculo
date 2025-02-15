@@ -1,0 +1,106 @@
+/* Estilo geral da página */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f9f1;
+    color: #333;
+}
+
+/* Container principal */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+/* Cabeçalho */
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+h1 {
+    font-size: 36px;
+    color: #388e3c;
+}
+
+p {
+    font-size: 20px;
+    color: #555;
+}
+
+/* Estilo para as seções de cálculo */
+.form-section {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+/* Formulários de cálculo */
+.calculation {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex: 1;
+}
+
+/* Títulos das seções */
+h2 {
+    font-size: 24px;
+    color: #388e3c;
+    margin-bottom: 15px;
+}
+
+/* Inputs e botões */
+input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    background-color: #388e3c;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #2c6e2f;
+}
+
+/* Resultados */
+.result {
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+table th {
+    width: 30%;
+    background-color: #f1f1f1;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .form-section {
+        flex-direction: column;
+    }
+}

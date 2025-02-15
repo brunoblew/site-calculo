@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fermentação</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Fermentação</h1>
+        <form method="POST">
+            <label for="valor">Digite um valor:</label>
+            <input type="text" id="valor" name="valor" value="{{ valor if valor is not none else '' }}">
+            <button type="submit">Calcular</button>
+        </form>
+
+        {% if resultado_1 and resultado_2 %}
+        <h2>Resultados para o valor {{ valor }}:</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Fermentação x2</th>
+                    <th>Fermentação x3</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Água:</strong> {{ resultado_1.agua|round(2) }}</td>
+                    <td><strong>Água:</strong> {{ resultado_2.agua|round(2) }}</td>
+                </tr>
+                <tr>
+                    <td><strong>Açúcar:</strong> {{ resultado_1.acucar|round(2) }}</td>
+                    <td><strong>Açúcar:</strong> {{ resultado_2.acucar|round(2) }}</td>
+                </tr>
+                <tr>
+                    <td><strong>Fermento:</strong> {{ resultado_1.fermento|round(2) }}</td>
+                    <td><strong>Fermento:</strong> {{ resultado_2.fermento|round(2) }}</td>
+                </tr>
+            </tbody>
+        </table>
+        {% elif resultado_1 is not none %}
+        <h2>Por favor, insira um valor válido.</h2>
+        {% endif %}
+    </div>
+</body>
+</html>
